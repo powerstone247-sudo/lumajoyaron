@@ -42,7 +42,7 @@ export function Auth() {
       <div className="max-w-md w-full space-y-8">
         {/* Header */}
         <div className="text-center">
-          <div className="text-red-600 text-4xl font-bold mb-2">
+          <div className="text-blue-500 text-4xl font-bold mb-2 [text-shadow:0_0_10px_rgba(59,130,246,0.8)]">
             Lumajoyaron
           </div>
           <h2 className="text-3xl font-extrabold text-white">
@@ -68,7 +68,7 @@ export function Auth() {
                   required={!isLogin}
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-700 placeholder-gray-500 text-white bg-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
+                  className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-700 placeholder-gray-500 text-white bg-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                   placeholder="Full Name"
                 />
               </div>
@@ -86,7 +86,7 @@ export function Auth() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-700 placeholder-gray-500 text-white bg-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-700 placeholder-gray-500 text-white bg-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
               />
             </div>
@@ -103,7 +103,7 @@ export function Auth() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="appearance-none rounded-md relative block w-full px-3 py-2 pr-10 border border-gray-700 placeholder-gray-500 text-white bg-gray-900 focus:outline-none focus:ring-red-500 focus:border-red-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-md relative block w-full px-3 py-2 pr-10 border border-gray-700 placeholder-gray-500 text-white bg-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
               />
               <button
@@ -121,7 +121,7 @@ export function Auth() {
           </div>
 
           {error && (
-            <div className="text-red-500 text-sm text-center">
+            <div className="text-blue-500 text-sm text-center">
               {error}
             </div>
           )}
@@ -130,7 +130,7 @@ export function Auth() {
             <button
               type="submit"
               disabled={loading}
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <LoadingSpinner size="sm" />
@@ -150,7 +150,7 @@ export function Auth() {
                 setPassword('')
                 setFullName('')
               }}
-              className="text-red-600 hover:text-red-500 text-sm font-medium"
+              className="text-blue-600 hover:text-blue-500 text-sm font-medium"
             >
               {isLogin 
                 ? "Don't have an account? Sign up" 
