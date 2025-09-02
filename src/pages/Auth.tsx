@@ -43,13 +43,13 @@ export function Auth() {
         {/* Header */}
         <div className="text-center">
           <div className="text-red-600 text-4xl font-bold mb-2">
-            StreamFlix
+            Lumajoyaron
           </div>
           <h2 className="text-3xl font-extrabold text-white">
             {isLogin ? 'Sign in to your account' : 'Create new account'}
           </h2>
           <p className="mt-2 text-sm text-gray-400">
-            {isLogin ? 'Welcome back to StreamFlix' : 'Join StreamFlix today'}
+            {isLogin ? 'Welcome back to Lumajoyaron' : 'Join Lumajoyaron today'}
           </p>
         </div>
 

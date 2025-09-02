@@ -38,8 +38,9 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
+              <img src="/logo.png" alt="Lumajoyaron Logo" className="h-8 w-8" />
               <div className="text-red-600 text-2xl font-bold">
-                StreamFlix
+                Lumajoyaron
               </div>
             </Link>
 

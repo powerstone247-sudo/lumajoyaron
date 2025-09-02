@@ -13,7 +13,7 @@ export function HeroSection({ content }: HeroSectionProps) {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={content.poster_url || content.thumbnail_url || 'https://via.placeholder.com/1920x1080/000000/333333?text=StreamFlix'}
+          src={content.poster_url || content.thumbnail_url || 'https://via.placeholder.com/1920x1080/000000/333333?text=Lumajoyaron'}
           alt={content.title}
           className="w-full h-full object-cover"
         />
