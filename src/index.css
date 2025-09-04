@@ -169,3 +169,21 @@
     }
   }
 }
+
+/* Mobile-specific styles */
+.mobile .container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mobile .text-responsive-xl {
+  @apply text-3xl;
+}
+
+.mobile .hide-on-mobile {
+  display: none;
+}
+
+.mobile .show-on-mobile {
+  display: block;
+}
