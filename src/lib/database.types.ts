@@ -7,6 +7,9 @@ export type Json =
   | Json[]
 
 export interface Database {
+  __InternalSupabase: {
+    PostgrestVersion: '12.2.3 (519615d)';
+  };
   public: {
     Tables: {
       affiliates: {
