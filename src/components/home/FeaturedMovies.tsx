@@ -3,21 +3,9 @@ import { motion } from 'framer-motion'
 import { useQuery } from '@tanstack/react-query'
 import { ChevronRight, Play, Plus, Star } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { supabase } from '@/lib/supabase'
+import { supabase, Movie, MovieGenre, MovieRating } from '@/lib/supabase'
 import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { MovieCard } from '@/components/ui/MovieCard'
-
-interface Movie {
-  id: string
-  title: string
-  description: string
-  thumbnail_url: string
-  duration: string
-  category: string
-  view_count: number
-  is_premium: boolean
-  price: number
-}
 
 interface MovieWithGenres extends Movie {
   genres: string[]
@@ -34,11 +22,13 @@ export function FeaturedMovies() {
       // Get top movies by view count
       const { data: movies, error } = await supabase
         .from('movies')
-        .select('*')
+        .select()
         .order('view_count', { ascending: false })
         .limit(12)
+        .returns<Movie[]>()
 
       if (error) throw error
+      if (!movies) return []
 
       // Get genres for movies
       const movieIds = movies.map(m => m.id)
@@ -46,12 +36,14 @@ export function FeaturedMovies() {
         .from('movie_genres')
         .select('movie_id, genre')
         .in('movie_id', movieIds)
+        .returns<Pick<MovieGenre, 'movie_id' | 'genre'>[]>()
 
       // Get ratings for movies
       const { data: ratings } = await supabase
         .from('movie_ratings')
         .select('movie_id, rating')
         .in('movie_id', movieIds)
+        .returns<Pick<MovieRating, 'movie_id' | 'rating'>[]>()
 
       // Combine data
       const moviesWithData: MovieWithGenres[] = movies.map(movie => {
@@ -64,7 +56,7 @@ export function FeaturedMovies() {
 
         return {
           ...movie,
-          genres: movieGenres.length > 0 ? movieGenres : [movie.category].filter(Boolean),
+          genres: movieGenres.length > 0 ? movieGenres : [movie.category].filter(Boolean) as string[],
           rating: {
             average: Math.round(averageRating * 10) / 10,
             count: movieRatings.length

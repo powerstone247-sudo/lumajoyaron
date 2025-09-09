@@ -15,6 +15,7 @@ export type TablesUpdate<T extends keyof Database['public']['Tables']> = Databas
 export type Movie = Tables<'movies'>
 export type UserProfile = Tables<'user_profiles'>
 export type MovieRating = Tables<'movie_ratings'>
+export type MovieGenre = Tables<'movie_genres'>
 export type MovieReview = Tables<'movie_reviews'>
 export type Watchlist = Tables<'watchlist'>
 export type ViewingHistory = Tables<'viewing_history'>

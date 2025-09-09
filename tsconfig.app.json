@@ -9,7 +9,7 @@
       "DOM.Iterable"
     ],
     "module": "ESNext",
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     /* Tailwind stuff */
     "baseUrl": ".",
     "paths": {
